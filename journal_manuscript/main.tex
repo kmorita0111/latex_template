@@ -1,0 +1,105 @@
+\documentclass[12pt, a4paper]{article}
+% Packages
+\usepackage{amsmath} % equations
+\usepackage{lineno} % line numbers
+\usepackage{geometry} % margin
+\usepackage[dvipdfmx]{graphicx} % figure
+\DeclareGraphicsExtensions{.pdf}
+\graphicspath{ {./figure/} }
+\usepackage{here} % mandatory configuration
+\usepackage[rightcaption]{sidecap}
+\usepackage{wrapfig}
+\geometry{left=25mm,right=25mm,top=25mm,bottom=25mm} % margin
+\usepackage{xcolor} % word color 
+
+\renewcommand{\baselinestretch}{2} % 行間
+% Title, Authors & Author
+\title{Title}
+\author{ Name$^{1}$, Name$^{2,*}$ }
+\date{}
+
+%============================( Document )============================%
+\begin{document}
+\linenumbers
+\begin{center}
+\noindent
+Manuscript intended for Article in {\it Journal} 
+\end{center}
+
+% updating date
+\begin{center}
+Latest revision: \today
+\end{center}
+
+% output of titles & authors
+{\let\newpage\relax\vspace*{-6em}\maketitle} 
+
+% affiliation
+\noindent $^1$The Graduate University for Advanced Studies, SOKENDAI, $^2$Affiliation
+
+% E-mail of a corresponding author
+\begin{center}
+$^*$Email: mail
+\end{center}
+
+%Running head
+\begin{center}
+Running Head: term
+\end{center}
+
+% Number of figures
+\noindent {\bf{Number of figures: {\color{red}number} (all of them are color figures);}}
+
+% Counting words
+\noindent {\bf{No. of words in the main text: {\color{red}number}; No. of words in Abstract: {\color{red}number}; No. of references: {\color{red}number}}}
+
+%============================( Abstract )============================%
+\newpage
+\section*{Abstract}
+\input{example/00abstract}
+
+\vskip\baselineskip\noindent
+{\bf{Keywords:}} terms
+%============================( Main text )============================%
+\newpage
+\section*{1. Introduction}
+\input{example/01introduction}
+
+\section*{2. Model}
+\input{example/02method}
+
+\section*{3. Result}
+\input{example/03result}
+
+\section*{4. Discussion}
+\input{example/04discussion}
+
+%===============( Acknowledgement & Conflict of interest )===============%
+\newpage
+\section*{Acknowledgement}
+We thank (Name, e.g., T. Fukami) for helpful discussion and (Name) for helpful comments. MY was supported by the Japan Society for the Promotion of Science (JSPS) Grant-in-Aid for Scientific Research (KAKENHI) 19K16223, 20KK0169, and 21H02560 and Australian Research Council (ARC) Discovery Projects DP220102040. 
+
+\section*{Conflict of interest}
+The authors declare no competing financial interests.
+
+%============================( References )============================%
+\newpage
+%\section*{References}
+\bibliography{ref} %bibファイルの名前を指定(拡張子なし)
+\bibliographystyle{RS} %文献リストのスタイルを指定(bstファイル)
+
+%============================( Appendix )============================%
+\newpage
+\section*{Appendix}
+\input{example/appendix}
+
+%============================( Figures )============================%
+\newpage
+\section*{Figures}
+\input{example/figure}
+%=======================( Supplementary figures )=======================%
+\newpage
+\section*{Supplementary figures}
+\input{example/sfigure}
+
+\end{document}
